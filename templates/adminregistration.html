@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="C:\Users\DELL\Desktop\task project\static\script.js"></script>
+        <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/admin.css')}}"/>
+        <!-- <link rel="stylesheet" href="C:\Users\DELL\Desktop\task project\static\css\admin.css"> -->
+        <title>
+          Admin register
+        </title>
+    </head>
+    <div class="error">
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          {% for message in messages %}
+          <center><b>{{ message}} !!!</b></center>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+      </div>
+
+<body>
+  <form method="POST">
+    <div class="page">
+    <div class="container">
+      <div class="left">
+        <div class="text">Admin Register</div>
+        <div class="eula">
+            ONLY ADMINS CAN REGISTER
+            <a  class="account-cre"  href="{{url_for('adminlogin')}}">Already have an account</a>
+        </div>
+      </div>
+      <div class="right">
+        <div class="form">
+          <!-- <form action="#" method="post" name="authentication" id="authentication" class="authentication"> -->
+          <label for="user id">User name</label>
+          <input type="text" id="userid" name="username"  required placeholder="______________________________">
+          <label for="email">Email</label>
+          <input type="email" id="email"required name="email" placeholder="_________________________">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required placeholder="_______________________">
+          <div class="sign-in-container  form-container"><br><br>
+            <button id="sub" type="submit" value="Submit">Sign In</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+</body>
+</html>
